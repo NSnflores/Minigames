@@ -1,5 +1,5 @@
 #include "AppDelegate.h"
-#include "JumpingHippo.h"
+#include "Drow.h"
 
 // #define USE_AUDIO_ENGINE 1
 // #define USE_SIMPLE_AUDIO_ENGINE 1
@@ -96,7 +96,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     FileUtils::getInstance()->addSearchPath("res");
 
     // create a scene. it's an autorelease object
-    auto scene = JumpingHippo::createScene();
+    auto scene = Drow::createScene();
 
     // run
     director->runWithScene(scene);
