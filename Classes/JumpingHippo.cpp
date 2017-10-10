@@ -11,11 +11,15 @@ Scene* JumpingHippo::createScene()
 
 bool JumpingHippo::init()
 {
-    if ( !Scene::init() )
+    if ( !Scene::initWithPhysics() )
     {
         return false;
     }
 
+    getPhysicsWorld()->setGravity(Vec2::ZERO);
+    
+    getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
+    
     initHippoSprite();
     initSpawner();
     initClickListener();
@@ -31,6 +35,10 @@ void JumpingHippo::initHippoSprite()
     hippoSprite->setScale(0.1f);
     
     addChild(hippoSprite, 1);
+    
+    auto physicsBox = PhysicsBody::createBox(hippoSprite->getContentSize());
+    
+    hippoSprite->setPhysicsBody(physicsBox);
 }
 
 void JumpingHippo::initSpawner()
