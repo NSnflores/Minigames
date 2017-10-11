@@ -1,5 +1,7 @@
 #include "AppDelegate.h"
 #include "Drow.h"
+#include "JumpingHippo.h"
+#include "Chips.h"
 
 // #define USE_AUDIO_ENGINE 1
 // #define USE_SIMPLE_AUDIO_ENGINE 1

@@ -19,6 +19,7 @@ bool JumpingHippo::init()
     getPhysicsWorld()->setGravity(Vec2::ZERO);
     
     getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
+
     
     initHippoSprite();
     initSpawner();
@@ -55,7 +56,7 @@ void JumpingHippo::initSpawner()
         auto moveToLeft = MoveTo::create(2.f, Vec2(0, size.height/2));
         spikesSprite->runAction(moveToLeft);
         
-    }, 1.f, 100, 1.f, "spawnerCallBack");
+    }, 1.f, 10, 1.f, "spawnerCallBack");
 }
 
 void JumpingHippo::initClickListener()

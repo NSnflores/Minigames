@@ -11,6 +11,8 @@
 		1AC6FB30180E99EB004C840B /* libcocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FB07180E9839004C840B /* libcocos2d iOS.a */; };
 		1B1C3A391F8D5AEF00A36255 /* Drow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B1C3A381F8D5AEF00A36255 /* Drow.cpp */; };
 		1B1C3A3A1F8D5AEF00A36255 /* Drow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B1C3A381F8D5AEF00A36255 /* Drow.cpp */; };
+		1B1C3A3D1F8D8B9600A36255 /* Chips.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B1C3A3B1F8D8B9500A36255 /* Chips.cpp */; };
+		1B1C3A3E1F8D8B9600A36255 /* Chips.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B1C3A3B1F8D8B9500A36255 /* Chips.cpp */; };
 		1BDB2D011F8C43A300E5DD9E /* JumpingHippo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BDB2D001F8C43A300E5DD9E /* JumpingHippo.cpp */; };
 		1BDB2D021F8C43A300E5DD9E /* JumpingHippo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BDB2D001F8C43A300E5DD9E /* JumpingHippo.cpp */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -117,6 +119,8 @@
 		1ACB3243164770DE00914215 /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = ../../cocos2dx/platform/third_party/ios/libraries/libcurl.a; sourceTree = "<group>"; };
 		1B1C3A361F8D5AEF00A36255 /* Drow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Drow.h; sourceTree = "<group>"; };
 		1B1C3A381F8D5AEF00A36255 /* Drow.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Drow.cpp; sourceTree = "<group>"; };
+		1B1C3A3B1F8D8B9500A36255 /* Chips.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Chips.cpp; sourceTree = "<group>"; };
+		1B1C3A3C1F8D8B9600A36255 /* Chips.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Chips.h; sourceTree = "<group>"; };
 		1BDB2CFF1F8C43A300E5DD9E /* JumpingHippo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JumpingHippo.h; sourceTree = "<group>"; };
 		1BDB2D001F8C43A300E5DD9E /* JumpingHippo.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = JumpingHippo.cpp; sourceTree = "<group>"; };
 		1BDB2D091F8C4B3400E5DD9E /* HelloWorld.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HelloWorld.png; sourceTree = "<group>"; };
@@ -318,6 +322,8 @@
 				46880B8419C43A87006E1F66 /* AppDelegate.cpp */,
 				1BDB2D001F8C43A300E5DD9E /* JumpingHippo.cpp */,
 				1BDB2CFF1F8C43A300E5DD9E /* JumpingHippo.h */,
+				1B1C3A3B1F8D8B9500A36255 /* Chips.cpp */,
+				1B1C3A3C1F8D8B9600A36255 /* Chips.h */,
 				1B1C3A381F8D5AEF00A36255 /* Drow.cpp */,
 				1B1C3A361F8D5AEF00A36255 /* Drow.h */,
 				46880B8519C43A87006E1F66 /* AppDelegate.h */,
@@ -522,6 +528,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
+				1B1C3A3D1F8D8B9600A36255 /* Chips.cpp in Sources */,
 				46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				1B1C3A391F8D5AEF00A36255 /* Drow.cpp in Sources */,
@@ -536,6 +543,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
+				1B1C3A3E1F8D8B9600A36255 /* Chips.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
 				46880B8B19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
 				1BDB2D021F8C43A300E5DD9E /* JumpingHippo.cpp in Sources */,
