@@ -5,6 +5,7 @@
 #include "Drow.h"
 #include "JumpingHippo.h"
 #include "Chips.h"
+#include "Board.h"
 
 
 // #define USE_AUDIO_ENGINE 1
@@ -103,7 +104,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
     // create a scene. it's an autorelease object
 
-    auto scene = Drow::createScene();
+    auto scene = Board::createScene();
 
     // run
     director->runWithScene(scene);
