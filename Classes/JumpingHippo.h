@@ -1,6 +1,7 @@
 #ifndef __JumpingHippo_SCENE_H__
 #define __JumpingHippo_SCENE_H__
 
+
 #include "cocos2d.h"
 
 USING_NS_CC;
