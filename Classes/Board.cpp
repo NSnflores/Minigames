@@ -18,6 +18,7 @@ bool Board::init()
     initTiles();
     initPlayer();
     initClickListener();
+    startDice();
     
     return true;
 }
@@ -52,6 +53,14 @@ void Board::initTiles()
         tile->setPosition(Vec2(xPosition, yPosition));
         
         addChild(tile);
+        
+        //SceneLabel
+        auto label = Label::create();
+        label->setScale(1.f/0.85, 2.f);
+        label->setPosition(Vec2(tile->getContentSize().width/2, 0));
+        
+        tile->addChild(label);
+        label->setString(sceneNames[i-1]);
     }
 }
 
@@ -73,7 +82,7 @@ void Board::initClickListener()
     auto mouseListener = EventListenerTouchOneByOne::create();
     
     mouseListener->onTouchBegan = [=](Touch* touch, Event* event){
-        throwDiceAndMove();
+        stopDiceAndMove();
         return true;
     };
     mouseListener->onTouchMoved = [=](Touch* touch, Event* event){};
@@ -83,19 +92,48 @@ void Board::initClickListener()
     _eventDispatcher->addEventListenerWithSceneGraphPriority(mouseListener, this);
 }
 
-void Board::throwDiceAndMove()
+void Board::stopDiceAndMove()
 {
+    stopDice();
+    
     Size screenSize = Director::getInstance()->getVisibleSize();
     
-    int randomNumber = random(1, (int)sceneConstructors.size());
+    Vec2 finalPosition = Vec2(screenSize.width / 7 * actualNumber + firstTileSize.width / 2, playerSprite->getPosition().y);
     
-    Vec2 finalPosition = Vec2(screenSize.width / 7 * randomNumber + firstTileSize.width / 2, playerSprite->getPosition().y);
-    
-    auto jumps = JumpTo::create(randomNumber * 0.6, finalPosition, 60, randomNumber);
+    auto jumps = JumpTo::create(actualNumber * 0.6, finalPosition, 60, actualNumber);
     
     playerSprite->runAction(jumps);
     
     schedule([=](float dt){
-        Director::getInstance()->pushScene(sceneConstructors[randomNumber-1]());
-    }, randomNumber, 1, 0, "changeScene");
+        Director::getInstance()->pushScene(sceneConstructors[actualNumber-1]());
+    }, actualNumber, 1, 0, "changeScene");
 }
+
+void Board::startDice()
+{
+    Size screenSize = Director::getInstance()->getVisibleSize();
+    auto diceLabel = Label::create();
+    
+    diceLabel->setPosition(Vec2(screenSize/3.f * 2.f));
+    diceLabel->setSystemFontSize(40);
+    
+    addChild(diceLabel);
+    
+    schedule([=](float dt){
+
+        actualNumber %= sceneConstructors.size();
+        actualNumber++;
+        
+        string text = "";
+        text.push_back(actualNumber+'0');
+        diceLabel->setString(text);
+        
+    }, 0.1f, -1, 0, "changeDiceNumber");
+    
+}
+
+void Board::stopDice()
+{
+    unschedule("changeDiceNumber");
+}
+

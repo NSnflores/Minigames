@@ -27,17 +27,31 @@ public:
     void initTiles();
     void initPlayer();
     void initClickListener();
+    void startDice();
+    void stopDice();
+    
+    int actualNumber = 1;
     
     Sprite* playerSprite;
     
-    vector<SceneConstructors> sceneConstructors = {
+    vector<SceneConstructors> sceneConstructors =
+    {
         JumpingHippo::createScene,
         Chips::createScene,
         Drow::createScene,
         Gluttony::createScene,
     };
+    vector<string> sceneNames =
+    {
+        "Jumping Hippo",
+        "Chips",
+        "Drow",
+        "Gluttony",
+        "Not Defined",
+        "Not Defined"
+    };
     
-    void throwDiceAndMove();
+    void stopDiceAndMove();
     
     Vec2 firstTilePosition;
     Size firstTileSize;
