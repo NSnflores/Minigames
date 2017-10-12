@@ -60,6 +60,8 @@ void Gluttony::configKeyboard()
             case EventKeyboard::KeyCode::KEY_LEFT_ARROW:
                 playerDirection = LEFT;
                 break;
+            default:
+                break;
         }
     };
     

@@ -7,6 +7,7 @@
 #include "Chips.h"
 #include "Drow.h"
 #include "Gluttony.h"
+#include "Stacking.h"
 
 #include "ui/CocosGUI.h"
 #include <vector>
@@ -40,6 +41,7 @@ public:
         Chips::createScene,
         Drow::createScene,
         Gluttony::createScene,
+        Stacking::createScene
     };
     vector<string> sceneNames =
     {
@@ -47,7 +49,7 @@ public:
         "Chips",
         "Drow",
         "Gluttony",
-        "Not Defined",
+        "Stacking",
         "Not Defined"
     };
     
