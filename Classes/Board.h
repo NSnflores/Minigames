@@ -11,7 +11,6 @@
 #include "ui/CocosGUI.h"
 #include <vector>
 
-
 USING_NS_CC;
 using namespace ui;
 using namespace std;

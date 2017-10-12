@@ -8,7 +8,6 @@ Scene* JumpingHippo::createScene()
     return JumpingHippo::create();
 }
 
-
 bool JumpingHippo::init()
 {
     if ( !Scene::initWithPhysics() )

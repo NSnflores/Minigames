@@ -8,7 +8,6 @@ Scene* Board::createScene()
     return Board::create();
 }
 
-
 bool Board::init()
 {
     if ( !Scene::init() )
@@ -84,7 +83,6 @@ void Board::initClickListener()
     _eventDispatcher->addEventListenerWithSceneGraphPriority(mouseListener, this);
 }
 
-
 void Board::throwDiceAndMove()
 {
     Size screenSize = Director::getInstance()->getVisibleSize();
@@ -101,11 +99,3 @@ void Board::throwDiceAndMove()
         Director::getInstance()->pushScene(sceneConstructors[randomNumber-1]());
     }, randomNumber, 1, 0, "changeScene");
 }
-
-
-
-
-
-
-
-

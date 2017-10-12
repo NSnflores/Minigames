@@ -8,7 +8,6 @@ Scene* Chips::createScene()
     return Chips::create();
 }
 
-
 bool Chips::init()
 {
     if ( !Scene::init() )
@@ -28,8 +27,6 @@ void Chips::initComponents()
     
     schedule([=](float dt){
         
-        
-        
         Sprite* chip = Sprite::create("circle.png");
         float xPosition = random(chip->getContentSize().width / 2, screenSize.width - chip->getContentSize().width / 2);
         float yPosition = random(chip->getContentSize().height / 2, screenSize.height - chip->getContentSize().height / 2);
@@ -46,9 +43,6 @@ void Chips::initComponents()
     }, 1.5f, 10, 0, "spawnerCallBack");
     
 }
-
-
-
 
 void Chips::initClickListener()
 {
@@ -81,9 +75,3 @@ bool Chips::isTouchingChip(Sprite* chip, Vec2 touchPosition)
     float radiusSquared = (chip->getContentSize().width/ 2) * (chip->getContentSize().width / 2);
     return xSquared + ySquared < radiusSquared;
 }
-
-
-
-
-
-

@@ -8,7 +8,6 @@ Scene* Drow::createScene()
     return Drow::create();
 }
 
-
 bool Drow::init()
 {
     if ( !Scene::init() )
@@ -81,8 +80,3 @@ void Drow::addPunctuation()
 {
     
 }
-
-
-
-
-
