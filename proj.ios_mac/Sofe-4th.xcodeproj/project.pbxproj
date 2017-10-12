@@ -11,6 +11,14 @@
 		1AC6FB30180E99EB004C840B /* libcocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FB07180E9839004C840B /* libcocos2d iOS.a */; };
 		1B1C3A391F8D5AEF00A36255 /* Drow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B1C3A381F8D5AEF00A36255 /* Drow.cpp */; };
 		1B1C3A3A1F8D5AEF00A36255 /* Drow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B1C3A381F8D5AEF00A36255 /* Drow.cpp */; };
+		1B1C3A3D1F8D8B9600A36255 /* Chips.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B1C3A3B1F8D8B9500A36255 /* Chips.cpp */; };
+		1B1C3A3E1F8D8B9600A36255 /* Chips.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B1C3A3B1F8D8B9500A36255 /* Chips.cpp */; };
+		1B1C3A411F8EA21C00A36255 /* Gluttony.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B1C3A3F1F8EA21B00A36255 /* Gluttony.cpp */; };
+		1B1C3A421F8EA21C00A36255 /* Gluttony.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B1C3A3F1F8EA21B00A36255 /* Gluttony.cpp */; };
+		1B1C3A451F8EA50400A36255 /* Board.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B1C3A431F8EA50400A36255 /* Board.cpp */; };
+		1B1C3A461F8EA50400A36255 /* Board.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B1C3A431F8EA50400A36255 /* Board.cpp */; };
+		1B1C3A491F8FD37D00A36255 /* Stacking.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B1C3A471F8FD37C00A36255 /* Stacking.cpp */; };
+		1B1C3A4A1F8FD37D00A36255 /* Stacking.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B1C3A471F8FD37C00A36255 /* Stacking.cpp */; };
 		1BDB2D011F8C43A300E5DD9E /* JumpingHippo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BDB2D001F8C43A300E5DD9E /* JumpingHippo.cpp */; };
 		1BDB2D021F8C43A300E5DD9E /* JumpingHippo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BDB2D001F8C43A300E5DD9E /* JumpingHippo.cpp */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -27,8 +35,6 @@
 		46880B7E19C43A67006E1F66 /* CloseSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 46880B7719C43A67006E1F66 /* CloseSelected.png */; };
 		46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8419C43A87006E1F66 /* AppDelegate.cpp */; };
 		46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8419C43A87006E1F66 /* AppDelegate.cpp */; };
-		46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8619C43A87006E1F66 /* HelloWorldScene.cpp */; };
-		46880B8B19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8619C43A87006E1F66 /* HelloWorldScene.cpp */; };
 		503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 503AE0F617EB97AB00D1A890 /* Icon.icns */; };
 		503AE10017EB989F00D1A890 /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FB17EB989F00D1A890 /* AppController.mm */; };
 		503AE10117EB989F00D1A890 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FC17EB989F00D1A890 /* main.m */; };
@@ -119,6 +125,14 @@
 		1ACB3243164770DE00914215 /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = ../../cocos2dx/platform/third_party/ios/libraries/libcurl.a; sourceTree = "<group>"; };
 		1B1C3A361F8D5AEF00A36255 /* Drow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Drow.h; sourceTree = "<group>"; };
 		1B1C3A381F8D5AEF00A36255 /* Drow.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Drow.cpp; sourceTree = "<group>"; };
+		1B1C3A3B1F8D8B9500A36255 /* Chips.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Chips.cpp; sourceTree = "<group>"; };
+		1B1C3A3C1F8D8B9600A36255 /* Chips.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Chips.h; sourceTree = "<group>"; };
+		1B1C3A3F1F8EA21B00A36255 /* Gluttony.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Gluttony.cpp; sourceTree = "<group>"; };
+		1B1C3A401F8EA21B00A36255 /* Gluttony.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Gluttony.h; sourceTree = "<group>"; };
+		1B1C3A431F8EA50400A36255 /* Board.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Board.cpp; sourceTree = "<group>"; };
+		1B1C3A441F8EA50400A36255 /* Board.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Board.h; sourceTree = "<group>"; };
+		1B1C3A471F8FD37C00A36255 /* Stacking.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Stacking.cpp; sourceTree = "<group>"; };
+		1B1C3A481F8FD37C00A36255 /* Stacking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Stacking.h; sourceTree = "<group>"; };
 		1BDB2CFF1F8C43A300E5DD9E /* JumpingHippo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JumpingHippo.h; sourceTree = "<group>"; };
 		1BDB2D001F8C43A300E5DD9E /* JumpingHippo.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = JumpingHippo.cpp; sourceTree = "<group>"; };
 		1BDB2D091F8C4B3400E5DD9E /* HelloWorld.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HelloWorld.png; sourceTree = "<group>"; };
@@ -134,8 +148,6 @@
 		46880B7719C43A67006E1F66 /* CloseSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseSelected.png; sourceTree = "<group>"; };
 		46880B8419C43A87006E1F66 /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AppDelegate.cpp; sourceTree = "<group>"; };
 		46880B8519C43A87006E1F66 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		46880B8619C43A87006E1F66 /* HelloWorldScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HelloWorldScene.cpp; sourceTree = "<group>"; };
-		46880B8719C43A87006E1F66 /* HelloWorldScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelloWorldScene.h; sourceTree = "<group>"; };
 		503AE0F617EB97AB00D1A890 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 		503AE0F717EB97AB00D1A890 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		503AE0FA17EB989F00D1A890 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppController.h; path = ios/AppController.h; sourceTree = SOURCE_ROOT; };
@@ -322,11 +334,17 @@
 				46880B8419C43A87006E1F66 /* AppDelegate.cpp */,
 				1BDB2D001F8C43A300E5DD9E /* JumpingHippo.cpp */,
 				1BDB2CFF1F8C43A300E5DD9E /* JumpingHippo.h */,
+				1B1C3A3B1F8D8B9500A36255 /* Chips.cpp */,
+				1B1C3A3C1F8D8B9600A36255 /* Chips.h */,
+				1B1C3A471F8FD37C00A36255 /* Stacking.cpp */,
+				1B1C3A481F8FD37C00A36255 /* Stacking.h */,
 				1B1C3A381F8D5AEF00A36255 /* Drow.cpp */,
+				1B1C3A431F8EA50400A36255 /* Board.cpp */,
+				1B1C3A441F8EA50400A36255 /* Board.h */,
+				1B1C3A3F1F8EA21B00A36255 /* Gluttony.cpp */,
+				1B1C3A401F8EA21B00A36255 /* Gluttony.h */,
 				1B1C3A361F8D5AEF00A36255 /* Drow.h */,
 				46880B8519C43A87006E1F66 /* AppDelegate.h */,
-				46880B8619C43A87006E1F66 /* HelloWorldScene.cpp */,
-				46880B8719C43A87006E1F66 /* HelloWorldScene.h */,
 				31FAF4EA1F8EB27300208634 /* Counting.cpp */,
 				31FAF4EE1F8EB28400208634 /* Counting.h */,
 			);
@@ -528,12 +546,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
-				46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
+				1B1C3A491F8FD37D00A36255 /* Stacking.cpp in Sources */,
+				1B1C3A3D1F8D8B9600A36255 /* Chips.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				1B1C3A391F8D5AEF00A36255 /* Drow.cpp in Sources */,
 				31FAF4EC1F8EB27300208634 /* Counting.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
+				1B1C3A411F8EA21C00A36255 /* Gluttony.cpp in Sources */,
+				1B1C3A451F8EA50400A36255 /* Board.cpp in Sources */,
 				1BDB2D011F8C43A300E5DD9E /* JumpingHippo.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -543,8 +564,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
+				1B1C3A4A1F8FD37D00A36255 /* Stacking.cpp in Sources */,
+				1B1C3A3E1F8D8B9600A36255 /* Chips.cpp in Sources */,
+				1B1C3A461F8EA50400A36255 /* Board.cpp in Sources */,
+				1B1C3A421F8EA21C00A36255 /* Gluttony.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
-				46880B8B19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
 				1BDB2D021F8C43A300E5DD9E /* JumpingHippo.cpp in Sources */,
 				31FAF4EF1F8EB69300208634 /* Counting.cpp in Sources */,
 				1B1C3A3A1F8D5AEF00A36255 /* Drow.cpp in Sources */,
