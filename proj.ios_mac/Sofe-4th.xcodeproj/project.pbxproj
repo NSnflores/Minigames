@@ -25,6 +25,8 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		294D0D641D0D56D500F7F5D4 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 294D0D631D0D56D500F7F5D4 /* CoreText.framework */; };
+		31FAF4EC1F8EB27300208634 /* Counting.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31FAF4EA1F8EB27300208634 /* Counting.cpp */; };
+		31FAF4EF1F8EB69300208634 /* Counting.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31FAF4EA1F8EB27300208634 /* Counting.cpp */; };
 		3EACC98F19EE6D4300EB3C5E /* res in Resources */ = {isa = PBXBuildFile; fileRef = 3EACC98E19EE6D4300EB3C5E /* res */; };
 		3EACC99019EE6D4300EB3C5E /* res in Resources */ = {isa = PBXBuildFile; fileRef = 3EACC98E19EE6D4300EB3C5E /* res */; };
 		46880B7B19C43A67006E1F66 /* CloseNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 46880B7619C43A67006E1F66 /* CloseNormal.png */; };
@@ -139,6 +141,8 @@
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		294D0D631D0D56D500F7F5D4 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreText.framework; sourceTree = DEVELOPER_DIR; };
+		31FAF4EA1F8EB27300208634 /* Counting.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Counting.cpp; sourceTree = "<group>"; };
+		31FAF4EE1F8EB28400208634 /* Counting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Counting.h; sourceTree = "<group>"; };
 		3EACC98E19EE6D4300EB3C5E /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; path = res; sourceTree = "<group>"; };
 		46880B7619C43A67006E1F66 /* CloseNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseNormal.png; sourceTree = "<group>"; };
 		46880B7719C43A67006E1F66 /* CloseSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseSelected.png; sourceTree = "<group>"; };
@@ -341,6 +345,8 @@
 				1B1C3A401F8EA21B00A36255 /* Gluttony.h */,
 				1B1C3A361F8D5AEF00A36255 /* Drow.h */,
 				46880B8519C43A87006E1F66 /* AppDelegate.h */,
+				31FAF4EA1F8EB27300208634 /* Counting.cpp */,
+				31FAF4EE1F8EB28400208634 /* Counting.h */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -544,6 +550,7 @@
 				1B1C3A3D1F8D8B9600A36255 /* Chips.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				1B1C3A391F8D5AEF00A36255 /* Drow.cpp in Sources */,
+				31FAF4EC1F8EB27300208634 /* Counting.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				1B1C3A411F8EA21C00A36255 /* Gluttony.cpp in Sources */,
@@ -563,6 +570,7 @@
 				1B1C3A421F8EA21C00A36255 /* Gluttony.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
 				1BDB2D021F8C43A300E5DD9E /* JumpingHippo.cpp in Sources */,
+				31FAF4EF1F8EB69300208634 /* Counting.cpp in Sources */,
 				1B1C3A3A1F8D5AEF00A36255 /* Drow.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

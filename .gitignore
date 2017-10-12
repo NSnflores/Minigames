@@ -2,3 +2,6 @@ cocos2d
 bin
 *.DS_Store
 proj.ios_mac/build
+proj.ios_mac/Sofe-4th.xcodeproj/project.xcworkspace/xcuserdata/alejos.xcuserdatad/
+proj.ios_mac/Sofe-4th.xcodeproj/xcuserdata/alejos.xcuserdatad/
+proj.ios_mac/cocos2d-x-3.16/
