@@ -19,29 +19,25 @@ public:
     
     virtual bool init();
     
-    Sprite* circleSprite;
-    Sprite* squareSprite;
-    Sprite* triangleSprite;
-    Sprite* plusButton;
-    Sprite* minusButton;
+    Sprite* plus;
+    Sprite* minus;
     
-    Vector<Sprite*> spriteArray;
+    Vector<Sprite*> array;
     
-    int circleAmount;
-    int squareAmount;
-    int triangleAmount;
-    int despawnedSprites;
+    int circles;
+    int squares;
+    int triangles;
+    int spawned;
     int answer;
     int counter;
-    Label* counterLabel;
+    Label* label;
     
-    void initComponents();
-    void populateArray();
+    void initVariables();
     void initListeners();
-    void displaySprites();
+    void display();
     void displayCounter();
-    void counterUp();
-    void counterDown();
+    void displayUp();
+    void displayDown();
     void endGame();
     
     CREATE_FUNC(Counting);
