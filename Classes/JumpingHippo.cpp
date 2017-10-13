@@ -17,9 +17,6 @@ bool JumpingHippo::init()
 
     getPhysicsWorld()->setGravity(Vec2::ZERO);
     
-    getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
-
-    
     initHippoSprite();
     initSpawner();
     initClickListener();
@@ -36,9 +33,6 @@ void JumpingHippo::initHippoSprite()
     
     addChild(hippoSprite, 1);
     
-    auto physicsBox = PhysicsBody::createBox(hippoSprite->getContentSize());
-    
-    hippoSprite->setPhysicsBody(physicsBox);
 }
 
 void JumpingHippo::initSpawner()
