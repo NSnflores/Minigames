@@ -8,6 +8,7 @@
 #include "Drow.h"
 #include "Gluttony.h"
 #include "Stacking.h"
+#include "Counting.h"
 
 #include "ui/CocosGUI.h"
 #include <vector>
@@ -41,7 +42,8 @@ public:
         Chips::createScene,
         Drow::createScene,
         Gluttony::createScene,
-        Stacking::createScene
+        Stacking::createScene,
+        Counting::createScene
     };
     vector<string> sceneNames =
     {
@@ -50,7 +52,7 @@ public:
         "Drow",
         "Gluttony",
         "Stacking",
-        "Not Defined"
+        "Counting"
     };
     
     void stopDiceAndMove();
