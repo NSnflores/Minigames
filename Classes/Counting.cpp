@@ -21,50 +21,31 @@ bool Counting::init()
     {
         return false;
     }
-    initComponents();
+    initVariables();
     initListeners();
-    displaySprites();
+    display();
     return true;
 }
 
-void Counting::initComponents()
+void Counting::initVariables()
 {
-    spriteArray = Vector<Sprite*>();
-    
-    circleAmount = 0;
-    circleSprite = Sprite::create("circle.png");
-    
-    squareAmount = 0;
-    squareSprite = Sprite::create("square.png");
-    
-    
-    triangleAmount = 0;
-    triangleSprite = Sprite::create("triforce.png");
-    
-    despawnedSprites = 0;
-    populateArray();
-}
-
-void Counting::populateArray()
-{
-    int objectAmount = RandomHelper::random_int(2,10);
-    for(int i = 0; i < objectAmount; i++)
+    array = Vector<Sprite*>();
+    spawned = 0;
+    int objects = RandomHelper::random_int(2,20);
+    for(int i = 0; i < objects; i++)
     {
-        int objectPicker = RandomHelper::random_int(1,3);
-        switch(objectPicker)
-        {
-            case 1 :
-                spriteArray.pushBack(circleSprite);
-                circleAmount++;
-                break;
-            case 2 :
-                spriteArray.pushBack(squareSprite);
-                circleAmount++;
-                break;
-            case 3 :
-                spriteArray.pushBack(triangleSprite);
-                circleAmount++;
-                break;
+        int object = RandomHelper::random_int(1,3);
+        if(object == 1) {
+            array.pushBack(Sprite::create("circle.png"));
+            circles++;
+        }
+        if(object == 2) {
+            array.pushBack(Sprite::create("square.png"));
+            circles++;
+        }
+        if(object == 3) {
+            array.pushBack(Sprite::create("triforce.png"));
+            circles++;
         }
     }
 }
@@ -73,8 +54,8 @@ void Counting::initListeners()
 {
     auto despawnListener = EventListenerCustom::create("custom_event_sprite_disappear", [=](EventCustom* event)
     {
-        despawnedSprites++;
-        if (despawnedSprites == spriteArray.size())
+        spawned++;
+        if (spawned == array.size())
         {
             displayCounter();
         }
@@ -84,14 +65,8 @@ void Counting::initListeners()
     auto tapListener = EventListenerTouchOneByOne::create();
     tapListener->onTouchBegan = [ this ](Touch* touch, Event* event)
     {
-        if (plusButton->getBoundingBox().containsPoint(touch->getLocation()))
-        {
-            counterUp();
-        }
-        else if (minusButton->getBoundingBox().containsPoint(touch->getLocation()))
-        {
-            counterDown();
-        }
+        if (plus->getBoundingBox().containsPoint(touch->getLocation())) { displayUp(); }
+        if (minus->getBoundingBox().containsPoint(touch->getLocation())){ displayDown(); }
         return true;
     };
     _eventDispatcher->addEventListenerWithSceneGraphPriority(tapListener, this);
@@ -103,22 +78,20 @@ void Counting::initListeners()
     _eventDispatcher->addEventListenerWithSceneGraphPriority(endListener, this);
 }
 
-void Counting::displaySprites()
+void Counting::display()
 {
-    auto size = Director::getInstance()->getVisibleSize();
-    float delaySeconds = 0.8;
-    for( int i = 0; i < spriteArray.size(); i++ )
+    float delay = 0.8;
+    for( int i = 0; i < array.size(); i++ )
     {
-        auto delay = DelayTime::create(delaySeconds * i);
-        auto spriteSpawn = CallFunc::create([ this, i, size ]()
+        auto delayT = DelayTime::create(delay * i);
+        auto spriteSpawn = CallFunc::create([ this, i ]()
          {
-             Sprite* originalSprite = this->spriteArray.at(i);
-             Sprite* clonedSprite = Sprite::createWithTexture(originalSprite->getTexture());
-             clonedSprite->setScale(originalSprite->getScaleX(), originalSprite->getScaleY());
+             Sprite* aux = Sprite::createWithTexture(this->array.at(i)->getTexture());
+             aux->setScale(this->array.at(i)->getScaleX(), this->array.at(i)->getScaleY());
              
-             clonedSprite->setPosition(Vec2(size.width, size.height/2));
+             aux->setPosition(Vec2(Director::getInstance()->getVisibleSize().width, Director::getInstance()->getVisibleSize().height/2));
              
-             auto moveToLeft = MoveTo::create(1.5f, Vec2(0, size.height/2));
+             auto moveToLeft = MoveTo::create(1.5f, Vec2(0, Director::getInstance()->getVisibleSize().height/2));
              auto removeSprite = RemoveSelf::create();
              auto callListener = CallFunc::create([this]()
               {
@@ -127,68 +100,67 @@ void Counting::displaySprites()
               });
              
              auto sequence = Sequence::create(moveToLeft, removeSprite, callListener, NULL);
-             clonedSprite->runAction(sequence);
+             aux->runAction(sequence);
              
-             addChild(clonedSprite);
+             addChild(aux);
          });
         
-        auto seq = Sequence::create(delay, spriteSpawn, NULL);
+        auto seq = Sequence::create(delayT, spriteSpawn, NULL);
         this->runAction(seq);
     }
 }
 
 void Counting::displayCounter()
 {
-    auto size = Director::getInstance()->getVisibleSize();
+    auto xy = Director::getInstance()->getVisibleSize();
     
     auto myLabel = Label::create();
     myLabel->setString("How many did you find?");
     myLabel->setTextColor(Color4B::WHITE);
-    myLabel->setPosition(Vec2(size.width/2, size.height/3));
+    myLabel->setPosition(Vec2(xy.width/2, xy.height/3));
     addChild(myLabel);
     
     counter = 0;
-    counterLabel = Label::create();
-    counterLabel->setString("0");
-    counterLabel->setTextColor(Color4B::WHITE);
-    counterLabel->setPosition(Vec2(size.width/2, size.height/4));
-    addChild(counterLabel);
+    label = Label::create();
+    label->setString("0.0");
+    label->setTextColor(Color4B::WHITE);
+    label->setPosition(Vec2(xy.width/2, xy.height/4));
+    addChild(label);
     
-    minusButton = Sprite::create("minus.png");
-    minusButton->setPosition(Vec2(size.width/2.5, size.height/4));
-    minusButton->setScale(.5);
-    addChild(minusButton);
+    minus = Sprite::create("minus.png");
+    minus->setPosition(Vec2(xy.width/2.5, xy.height/4));
+    addChild(minus);
     
-    plusButton = Sprite::create("plus.png");
-    plusButton->setScale(.5);
-    plusButton->setPosition(Vec2(size.width/1.5 - minusButton->getBoundingBox().size.width, size.height/4));
-    addChild(plusButton);
+    plus = Sprite::create("plus.png");
+    plus->setScale(.5);
+    plus->setPosition(Vec2(xy.width/1.5 - plus->getBoundingBox().size.width, xy.height/4));
+    addChild(plus);
     
-    int objectPicker = RandomHelper::random_int(1,3);
-    Sprite* questionSprite;
-    switch(objectPicker)
+    int object = RandomHelper::random_int(1,3);
+    Sprite* question;
+    switch(object)
     {
         case 1 :
-            questionSprite = Sprite::create("circle.png");
-            answer = circleAmount;
+            question = Sprite::create("circle.png");
+            answer = circles;
             break;
         case 2 :
-            questionSprite = Sprite::create("square.png");
-            answer = squareAmount;
+            question = Sprite::create("square.png");
+            answer = squares;
             break;
         case 3 :
-            questionSprite = Sprite::create("triforce.png");
-            answer = triangleAmount;
+            question = Sprite::create("triangle.png");
+            answer = triangles;
             break;
     }
     
-    questionSprite->setScale(1.0f);
-    questionSprite->setPosition(Vec2(size.width/2, size.height/2));
+    question->setScale(1.0f);
+    question->setPosition(Vec2(xy.width/2, xy.height/2));
     
-    addChild(questionSprite);
+    addChild(question);
     
-    int timeLimit = 5;
-    auto delay = DelayTime::create(timeLimit);
+    int time = 5;
+    auto delay = DelayTime::create(time);
     auto end = CallFunc::create([ this ]()
     {
         EventCustom event("custom_event_end");
@@ -199,22 +171,19 @@ void Counting::displayCounter()
     this->runAction(sequence);
 }
 
-void Counting::counterUp()
+void Counting::displayUp()
 {
     counter++;
-    counterLabel->setString(std::to_string(counter));
+    label->setString(std::to_string(counter));
 }
 
-void Counting::counterDown()
+void Counting::displayDown()
 {
     counter--;
-    counterLabel->setString(std::to_string(counter));
+    label->setString(std::to_string(counter));
 }
 
 void Counting::endGame()
 {
-    int difference = abs(answer - counter);
-    counterLabel->setString("ended");
-    removeChild(plusButton);
-    removeChild(minusButton);
+    printf("ended");
 }
